@@ -1,0 +1,2 @@
+alias virtualenv='python -m virtualenv'
+eval "$(pyenv init -)"
