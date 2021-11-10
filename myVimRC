@@ -12,6 +12,9 @@ set confirm
 " Set color scheme!
 colorscheme elflord
 
+" Case insensitive write
+cnoreabbrev W w
+
 set clipboard=unnamed
 " Enhance command-line completion
 set wildmenu
