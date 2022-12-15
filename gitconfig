@@ -5,24 +5,24 @@
 [includeIf "gitdir:~/Personal/**"]
   path = .gitconfig-personal
 
+
 [alias]
 	tree = log --graph --full-history --all --color --date=short --pretty=format:\"%x1b[36m%x1b[1m%h %x1b[35m%cd %x1b[0m%x20%s\"
-	treetime = log --graph --full-history --all --color --date=short --pretty=format:\"%x1b[36m%x1b[1m%h %x1b[35m%ci %x1b[0m%x20%s\"
+	tree2 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
 	unstage = reset HEAD --
-	co = checkout
-[http "https://gerrit.bulogics.com"]
-	sslVerify = false
+	force = push --force-with-lease --force-if-includes
+	trim = "!f(){\
+        git branch | grep -vE 'master|develop|main' | grep -v ^* | xargs git branch -D;\
+    }; f"
+[push]
+	default = current
+[pull]
+	rebase = true
 [submodule]
 	recurse = true
 [color]
 	ui = auto
 [gitreview]
 	username = lizziemac
-[pull]
-	rebase = true
-[credential]
-	helper = 
 [init]
 	defaultBranch = main
-[push]
-	default = current
