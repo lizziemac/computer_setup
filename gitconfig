@@ -7,8 +7,10 @@
 
 
 [alias]
-	tree = log --graph --full-history --all --color --date=short --pretty=format:\"%x1b[36m%x1b[1m%h %x1b[35m%cd %x1b[0m%x20%s\"
-	tree2 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset%n' --abbrev-commit --date=relative --branches
+	# accepts an argument of <branch name> to show a branch other than the current one
+	tree = log --graph --color --date=short --pretty=format:\"%x1b[36m%x1b[1m%h %x1b[35m%cd %x1b[0m%x20%s\"
+	# shows entire tree
+	bigtree = log --graph --full-history --all --color --date=short --pretty=format:\"%x1b[36m%x1b[1m%h %x1b[35m%cd %x1b[0m%x20%s\"
 	unstage = reset HEAD --
 	force = push --force-with-lease --force-if-includes
 	trim = "!f(){\
